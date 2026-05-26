@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
+      overflow:hidden;
+      padding:20px;
+    }
+
+    .card{
+      width:100%;
+      max-width:400px;
+      background:rgba(255,255,255,0.2);
+      backdrop-filter:blur(5px);
+      border-radius:25px;
+      padding:35px 25px;
+      text-align:center;
+      box-shadow:0 8px 25px rgba(0,0,0,0.2);
+      color:white;
+      animation:fadeIn 1.5s ease;
+    }
+
+    .cake{
+      font-size:80px;
+      animation:bounce 10s infinite;
+    }
+
+    h1{
+      font-size:2.2rem;
+      margin-top:15px;
+      font-weight:700;
+    }
+
+    h2{
+      font-size:1.3rem;
+      margin-top:10px;
+      color:#fff8dc;
+    }
+
+    p{
+      margin-top:20px;
+      font-size:1rem;
+      line-height:1.6;
+    }
+
+    button{
+      margin-top:25px;
+      padding:12px 25px;
+      border:none;
+      border-radius:30px;
+      background:white;
+      color:#ff4b7d;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:scale(1.05);
+      background:#fff0f5;
+    }
+
+    @keyframes bounce{
+      0%,100%{
+        transform:translateY(0);
+      }
+      50%{
+        transform:translateY(-10px);
+      }
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* Mobile Responsive */
+    @media(max-width:480px){
+      h1{
+        font-size:1.8rem;
+      }
+
+      h2{
+        font-size:1.1rem;
+      }
+
+      p{
+        font-size:0.95rem;
+      }
+
+      .cake{
+        font-size:65px;
+      }
+
+      .card{
+        padding:30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card open">
+    <div class="cake">🎂</div>
+
+    <h1>Happy Birthday Shaheena!</h1>
+
+    <h2>Dear Friend 🎉</h2>
+
+    <p>
+      Wish you many more Happy returns of the day Shaheena. I wish you a great success in your life.
+      I hope your day is filled with lots of love and Happiness. Enjoy your life too the end.
+      I wish to see you at the top in each step of your life. 
+    </p>
+
+    <button onclick="startConfetti()">
+      Open
+      Celebrate 🎊
+    </button>
+    </button>
+  </div>
+  </div>
+  <script>
+    // Automatic Confetti on Page Load
+    window.onload = () => {
+      startConfetti();
+    };
+
+    // Confetti Function
+    function startConfetti() {
+
+      confetti({
+        particleCount: 150,
+        spread: 120,
+        origin: { y: 0.6 }
+      });
+
+      // Extra burst effect
+      setTimeout(() => {
+        confetti({
+          particleCount: 100,
+          angle: 60,
+          spread: 80,
+          origin: { x: 0 }
+        });
+
+        confetti({
+          particleCount: 100,
+          angle: 120,
+          spread: 80,
+          origin: { x: 1 }
+        });
+
+      }, 500);
+    }
+  </script>
+
+</body>
+</html>
